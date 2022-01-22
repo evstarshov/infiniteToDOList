@@ -22,9 +22,6 @@ class RootFolder: TaskProtocol {
     }
     
     func add() {
-        let parentVC = UIViewController()
-        let childVC = UIViewController()
-        childVC.addChild(UIViewController())
     }
     
     

@@ -21,6 +21,7 @@
 		3AAB2D97279C458B009C8047 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D96279C458B009C8047 /* TaskModel.swift */; };
 		3AAB2D99279C4870009C8047 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAB2D98279C4870009C8047 /* TaskTableViewCell.xib */; };
 		3AAB2D9B279C4EE6009C8047 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D9A279C4EE6009C8047 /* TaskTableViewCell.swift */; };
+		3AAB2D9F279C6188009C8047 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB2D9E279C6188009C8047 /* ChildViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		3AAB2D96279C458B009C8047 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		3AAB2D98279C4870009C8047 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
 		3AAB2D9A279C4EE6009C8047 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		3AAB2D9E279C6188009C8047 /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				3AAB2D61279C4321009C8047 /* AppDelegate.swift */,
 				3AAB2D63279C4321009C8047 /* SceneDelegate.swift */,
 				3AAB2D65279C4321009C8047 /* ParentViewController.swift */,
+				3AAB2D9E279C6188009C8047 /* ChildViewController.swift */,
 				3AAB2D9A279C4EE6009C8047 /* TaskTableViewCell.swift */,
 				3AAB2D98279C4870009C8047 /* TaskTableViewCell.xib */,
 				3AAB2D67279C4321009C8047 /* Main.storyboard */,
@@ -289,6 +292,7 @@
 				3AAB2D93279C440F009C8047 /* TaskProtocol.swift in Sources */,
 				3AAB2D95279C4452009C8047 /* RootModel.swift in Sources */,
 				3AAB2D64279C4321009C8047 /* SceneDelegate.swift in Sources */,
+				3AAB2D9F279C6188009C8047 /* ChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

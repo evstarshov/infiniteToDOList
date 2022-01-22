@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ChildViewController.swift
 //  infiniteToDoList
 //
 //  Created by Евгений Старшов on 22.01.2022.
@@ -7,9 +7,10 @@
 
 import UIKit
 
-class ParentViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ChildViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
 
 
@@ -47,6 +48,13 @@ class ParentViewController: UIViewController, UITableViewDataSource, UITableView
         addFolder()
     }
     
+    
+    @IBAction func backButtonTapped() {
+        print("reversing child")
+        self.view.removeFromSuperview()
+        self.removeFromParent()
+    }
+    
     private func addFolder() {
         let textController = UIAlertController(title: "Enter folder name", message: nil, preferredStyle: .alert)
         textController.addTextField()
@@ -63,37 +71,4 @@ class ParentViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
 
-    
-    
-}
-
-
-extension UIViewController {
-    
-    func configureChildViewController(childController: UIViewController, onView: UIView?) {
-        var holderView = self.view
-        if let onView = onView {
-            holderView = onView
-        }
-        addChild(childController)
-        holderView?.addSubview(childController.view)
-        constrainViewEqual(holderView: holderView!, view: childController.view)
-        childController.didMove(toParent: self)
-    }
-
-
-    func constrainViewEqual(holderView: UIView, view: UIView) {
-        view.translatesAutoresizingMaskIntoConstraints = false
-        //pin 100 points from the top of the super
-        let pinTop = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal,
-                                    toItem: holderView, attribute: .top, multiplier: 1.0, constant: 0)
-        let pinBottom = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal,
-                                       toItem: holderView, attribute: .bottom, multiplier: 1.0, constant: 0)
-        let pinLeft = NSLayoutConstraint(item: view, attribute: .left, relatedBy: .equal,
-                                     toItem: holderView, attribute: .left, multiplier: 1.0, constant: 0)
-        let pinRight = NSLayoutConstraint(item: view, attribute: .right, relatedBy: .equal,
-                                      toItem: holderView, attribute: .right, multiplier: 1.0, constant: 0)
-
-        holderView.addConstraints([pinTop, pinBottom, pinLeft, pinRight])
-    }
 }
