@@ -54,7 +54,10 @@ class ParentViewController: UIViewController, UITableViewDataSource, UITableView
         let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned textController] _ in
             let answerName = textController.textFields![0]
             let answerDesc = textController.textFields![1]
-            self.tasks.append(RootFolder(name: answerName.text ?? "No name", description: answerDesc.text ?? "no description"))
+            self.tasks.append(RootFolder(name: answerName.text ?? "No name", description: answerDesc.text ?? {
+                let taskNames = self.tasks.compactMap {$0.description}.joined(separator: ",")
+                return "tasks \(taskNames)"
+            }()))
             print("Appending folder \(answerName.text ?? "empty name")")
             self.tableView.reloadData()
         }

@@ -20,6 +20,7 @@ class ChildViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tasks.forEach { $0.add() }
         tableView.delegate = self
         tableView.dataSource = self
         let nib = UINib(nibName: "TaskTableViewCell", bundle: nil)
@@ -62,7 +63,7 @@ class ChildViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned textController] _ in
             let answerName = textController.textFields![0]
             let answerDesc = textController.textFields![1]
-            self.tasks.append(RootFolder(name: answerName.text ?? "No name", description: answerDesc.text ?? "no description"))
+            self.tasks.append(MainTask(name: answerName.text ?? "No name", description: answerDesc.text ?? "no description"))
             print("Appending folder \(answerName.text ?? "empty name")")
             self.tableView.reloadData()
         }

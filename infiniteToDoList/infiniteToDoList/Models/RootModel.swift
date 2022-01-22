@@ -22,6 +22,9 @@ class RootFolder: TaskProtocol {
     }
     
     func add() {
+        print("opening \(description)")
+                print("then opening files: ")
+                self.tasks.forEach { $0.add() }
     }
     
     
